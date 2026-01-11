@@ -62,7 +62,7 @@ Before running this application, make sure you have the following installed:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/BabluKumar091/Alumni-Data-Management.git
+git clone https://github.com/nikhilranjan01/Alumni-System.git
 cd Alumni-Data-Management
 ```
 
@@ -253,7 +253,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👨‍💻 Author
 
 **Bablu Kumar**
-- GitHub: [@BabluKumar091](https://github.com/BabluKumar091)
+- GitHub: [@Nikhilranjan01](https://github.com/nikhilranjan01)
 
 ## 🙏 Acknowledgments
 
