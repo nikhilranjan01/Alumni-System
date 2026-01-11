@@ -250,7 +250,7 @@ const Register = () => {
                 </div>
               </motion.div>
 
-              {/* Role Selection */}
+              {/* Role Selection
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -309,7 +309,7 @@ const Register = () => {
                     )}
                   </button>
                 </div>
-              </motion.div>
+              </motion.div> */}
 
               {/* Terms & Submit */}
               <motion.div
