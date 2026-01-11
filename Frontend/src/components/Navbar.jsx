@@ -1,90 +1,88 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
+  const { pathname } = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Hide navbar on login/register pages
-  const isAuthPage =
-    window.location.pathname === "/login" ||
-    window.location.pathname === "/register";
-  if (isAuthPage) return null;
+  // Hide navbar on auth pages
+  if (pathname === "/login" || pathname === "/register") return null;
+
+  const navLink =
+    "text-sm font-medium text-slate-300 hover:text-white transition";
+
+  const activeLink =
+    "text-white border-b-2 border-sky-400 pb-1";
 
   return (
-    <nav className="bg-slate-900 text-slate-100 shadow-lg sticky top-0 z-50 border-b border-slate-700">
+    <nav className="sticky top-0 z-50 backdrop-blur-lg bg-slate-900/80 border-b border-slate-700 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
+        <div className="flex justify-between items-center h-16">
 
-          {/* Left Section */}
-          <div className="flex items-center space-x-6">
+          {/* Logo & Links */}
+          <div className="flex items-center gap-8">
             <Link
               to={user ? "/dashboard" : "/login"}
-              className="font-bold text-xl tracking-wide text-sky-400 hover:text-sky-300 transition"
+              className="text-xl font-extrabold tracking-wide text-sky-400 hover:text-sky-300"
             >
               AlumniMS
             </Link>
 
             {user && (
-              <>
-                <Link
-                  to="/alumni"
-                  className="hidden sm:inline-block text-sm font-medium text-slate-300 hover:text-white transition"
-                >
-                  Alumni List
-                </Link>
-
+              <div className="hidden sm:flex items-center gap-6">
                 <Link
                   to="/dashboard"
-                  className="hidden sm:inline-block text-sm font-medium text-slate-300 hover:text-white transition"
+                  className={`${navLink} ${
+                    pathname === "/dashboard" && activeLink
+                  }`}
                 >
                   Dashboard
                 </Link>
 
+                <Link
+                  to="/alumni"
+                  className={`${navLink} ${
+                    pathname === "/alumni" && activeLink
+                  }`}
+                >
+                  Alumni
+                </Link>
+
                 {user.role === "admin" && (
                   <>
-                    <Link
-                      to="/alumni/add"
-                      className="hidden sm:inline-block text-sm font-medium text-slate-300 hover:text-white transition"
-                    >
+                    <Link to="/alumni/add" className={navLink}>
                       Add Alumni
                     </Link>
-
-                    <Link
-                      to="/admin/alumni"
-                      className="hidden sm:inline-block text-sm font-medium text-slate-300 hover:text-white transition"
-                    >
+                    <Link to="/admin/alumni" className={navLink}>
                       Manage Alumni
                     </Link>
-
-                    <Link
-                      to="/admin/users"
-                      className="hidden sm:inline-block text-sm font-medium text-slate-300 hover:text-white transition"
-                    >
-                      Manage Users
+                    <Link to="/admin/users" className={navLink}>
+                      Users
                     </Link>
                   </>
                 )}
-              </>
+              </div>
             )}
           </div>
 
-          {/* Right Section */}
-          <div className="flex items-center space-x-3">
+          {/* Right Side */}
+          <div className="flex items-center gap-4">
             {user ? (
               <>
-                <span className="hidden sm:inline-block text-sm font-medium text-slate-300">
-                  {user.name}
-                </span>
-
-                <span className="hidden sm:inline-block px-2 py-0.5 text-xs font-semibold bg-sky-500 text-white rounded-full">
-                  {user.role ? user.role.toUpperCase() : "USER"}
-                </span>
+                <div className="hidden sm:flex flex-col text-right">
+                  <span className="text-sm font-semibold text-white">
+                    {user.name}
+                  </span>
+                  <span className="text-xs text-sky-400 uppercase">
+                    {user.role}
+                  </span>
+                </div>
 
                 <button
                   onClick={logout}
-                  className="bg-rose-500 hover:bg-rose-600 px-4 py-1.5 text-sm rounded-full transition shadow-sm"
+                  className="px-4 py-1.5 rounded-full text-sm bg-rose-500 hover:bg-rose-600 text-white shadow transition"
                 >
                   Logout
                 </button>
@@ -93,28 +91,26 @@ const Navbar = () => {
               <>
                 <Link
                   to="/login"
-                  className="px-4 py-1.5 text-sm rounded-full text-slate-300 hover:text-white hover:bg-slate-800 transition"
+                  className="px-4 py-1.5 rounded-full text-sm text-slate-300 hover:text-white hover:bg-slate-800 transition"
                 >
                   Login
                 </Link>
-
                 <Link
                   to="/register"
-                  className="px-4 py-1.5 text-sm rounded-full bg-sky-500 text-white font-medium hover:bg-sky-600 transition"
+                  className="px-4 py-1.5 rounded-full text-sm bg-sky-500 hover:bg-sky-600 text-white font-medium transition"
                 >
                   Register
                 </Link>
               </>
             )}
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Toggle */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="sm:hidden p-2 rounded-lg hover:bg-slate-800 transition"
-              aria-label={menuOpen ? "Close menu" : "Open menu"}
             >
               <svg
-                className="h-6 w-6"
+                className="h-6 w-6 text-white"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -136,54 +132,36 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="sm:hidden mt-3 bg-slate-800 rounded-xl shadow-lg p-4 space-y-2">
+          <div className="sm:hidden mt-3 rounded-2xl bg-slate-800 shadow-xl p-4 space-y-2 animate-fadeIn">
             {user ? (
               <>
-                <div className="px-3 py-2 border-b border-slate-600">
+                <div className="pb-3 border-b border-slate-700">
                   <div className="font-semibold text-white">{user.name}</div>
-                  <div className="text-xs text-slate-400">
-                    {user.role ? user.role.toUpperCase() : "USER"}
+                  <div className="text-xs text-sky-400 uppercase">
+                    {user.role}
                   </div>
                 </div>
 
-                <Link
-                  to="/dashboard"
-                  className="block px-4 py-2 rounded-lg text-slate-300 hover:bg-slate-700 hover:text-white transition"
-                >
-                  Dashboard
-                </Link>
-
-                <Link
-                  to="/alumni"
-                  className="block px-4 py-2 rounded-lg text-slate-300 hover:bg-slate-700 hover:text-white transition"
-                >
-                  Alumni List
-                </Link>
-
-                {user.role === "admin" && (
-                  <>
-                    <Link
-                      to="/alumni/add"
-                      className="block px-4 py-2 rounded-lg text-slate-300 hover:bg-slate-700 hover:text-white transition"
-                    >
-                      Add Alumni
-                    </Link>
-
-                    <Link
-                      to="/admin/alumni"
-                      className="block px-4 py-2 rounded-lg text-slate-300 hover:bg-slate-700 hover:text-white transition"
-                    >
-                      Manage Alumni
-                    </Link>
-
-                    <Link
-                      to="/admin/users"
-                      className="block px-4 py-2 rounded-lg text-slate-300 hover:bg-slate-700 hover:text-white transition"
-                    >
-                      Manage Users
-                    </Link>
-                  </>
-                )}
+                {[
+                  { to: "/dashboard", label: "Dashboard" },
+                  { to: "/alumni", label: "Alumni List" },
+                  ...(user.role === "admin"
+                    ? [
+                        { to: "/alumni/add", label: "Add Alumni" },
+                        { to: "/admin/alumni", label: "Manage Alumni" },
+                        { to: "/admin/users", label: "Manage Users" },
+                      ]
+                    : []),
+                ].map((item) => (
+                  <Link
+                    key={item.to}
+                    to={item.to}
+                    onClick={() => setMenuOpen(false)}
+                    className="block px-4 py-2 rounded-lg text-slate-300 hover:bg-slate-700 hover:text-white transition"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
 
                 <button
                   onClick={logout}
@@ -194,17 +172,10 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <Link
-                  to="/login"
-                  className="block px-4 py-2 rounded-lg text-slate-300 hover:bg-slate-700 hover:text-white transition"
-                >
+                <Link to="/login" className="block px-4 py-2 rounded-lg text-slate-300 hover:bg-slate-700">
                   Login
                 </Link>
-
-                <Link
-                  to="/register"
-                  className="block px-4 py-2 rounded-lg bg-sky-500 text-white font-medium hover:bg-sky-600 transition"
-                >
+                <Link to="/register" className="block px-4 py-2 rounded-lg bg-sky-500 text-white hover:bg-sky-600">
                   Register
                 </Link>
               </>
