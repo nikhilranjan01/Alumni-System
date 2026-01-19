@@ -1,7 +1,6 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const path = require('path');
 const connectDB = require('./config/db');
 
 const userRoutes = require('./routes/userRoutes');
@@ -14,7 +13,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://your-frontend.vercel.app"
+      "https://your-frontend.vercel.app" // <-- real Vercel URL daalna
     ],
     credentials: true
   })
@@ -30,13 +29,9 @@ connectDB(mongoUri);
 app.use('/api/users', userRoutes);
 app.use('/api/alumni', alumniRoutes);
 
-app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
-
-/* Frontend build serve */
-app.use(express.static(path.join(__dirname, 'client/dist')));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/dist/index.html'));
+/* Health check */
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'ok' });
 });
 
 /* Error handler */
@@ -45,7 +40,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: 'Server error' });
 });
 
-/* 🔥 PORT fix */
+/* 🔥 PORT */
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
