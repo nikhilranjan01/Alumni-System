@@ -13,7 +13,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://your-frontend.vercel.app" // <-- real Vercel URL daalna
+      "https://alumnisystem01.vercel.app/"
     ],
     credentials: true
   })
