@@ -92,11 +92,11 @@ const AddAlumni = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-4">
+    <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 py-12 px-4">
       <div className="max-w-4xl mx-auto">
         {/* Header Section */}
         <div className="mb-10 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+          <h1 className="text-3xl md:text-4xl font-bold bg-linear-to-br from-gray-800 to-gray-600 bg-clip-text text-transparent">
             Add New Alumni
           </h1>
           <p className="text-gray-600 mt-2 max-w-2xl mx-auto">
@@ -107,7 +107,7 @@ const AddAlumni = () => {
         {/* Form Container */}
         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
           {/* Form Header */}
-          <div className="bg-gradient-to-r from-emerald-500 to-teal-600 p-6 text-white">
+          <div className="bg-linear-to-tr from-emerald-500 to-teal-600 p-6 text-white">
             <div className="flex items-center space-x-3">
               <div className="h-12 w-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
                 <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -124,7 +124,7 @@ const AddAlumni = () => {
           {/* Form Content */}
           <div className="p-8">
             {error && (
-              <div className="mb-6 p-4 bg-gradient-to-r from-red-50 to-rose-50 border border-red-200 rounded-xl flex items-center space-x-3">
+              <div className="mb-6 p-4 bg-linear-to-tr from-red-50 to-rose-50 border border-red-200 rounded-xl flex items-center space-x-3">
                 <div className="h-8 w-8 rounded-full bg-red-500 flex items-center justify-center">
                   <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -327,7 +327,7 @@ const AddAlumni = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-3.5 px-6 bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-semibold rounded-lg hover:from-emerald-700 hover:to-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center space-x-2 group"
+                  className="w-full py-3.5 px-6 bg-linear-to-tr from-emerald-600 to-teal-600 text-white font-semibold rounded-lg hover:from-emerald-700 hover:to-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center space-x-2 group"
                 >
                   {loading ? (
                     <>

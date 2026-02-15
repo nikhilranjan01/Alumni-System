@@ -73,7 +73,7 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-blue-50/30 to-gray-100 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-tr from-gray-50 via-blue-50/30 to-gray-100 p-4">
       {/* Background decorative elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
@@ -90,7 +90,7 @@ const Register = () => {
           className="bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-200/50 overflow-hidden"
         >
           {/* Card Header */}
-          <div className="bg-gradient-to-r from-purple-600 to-blue-500 p-8 text-white text-center">
+          <div className="bg-linear-to-tr from-purple-600 to-blue-500 p-8 text-white text-center">
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
@@ -162,7 +162,7 @@ const Register = () => {
                     animate={{ opacity: 1, height: 'auto' }}
                     className="flex items-center space-x-2 text-sm text-red-600 bg-red-50/50 p-3 rounded-lg border border-red-200"
                   >
-                    <svg className="h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span>{emailError}</span>
@@ -321,7 +321,7 @@ const Register = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-3.5 px-6 bg-gradient-to-r from-purple-600 to-blue-500 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center space-x-2 group cursor-pointer"
+                  className="w-full py-3.5 px-6 bg-linear-to-tr from-purple-600 to-blue-500 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center space-x-2 group cursor-pointer"
                 >
                   {loading ? (
                     <>

@@ -1,6 +1,7 @@
 // src/App.jsx
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import { AuthProvider, useAuth } from "./context/AuthContext";
+import { AuthProvider, AuthContext } from "./context/AuthContext";
+import { useContext } from "react";
 import Navbar from "./components/Navbar";
 
 // Pages
@@ -15,8 +16,7 @@ import ViewAlumni from "./pages/ViewAlumni";
 import AdminUsers from "./pages/AdminUsers";
 import AdminAlumni from "./pages/AdminAlumni";
 import AlumniProfile from "./pages/AlumniProfile";
-import { useContext } from "react";
-import { AuthContext } from "./context/AuthContext";
+
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -27,7 +27,9 @@ const ProtectedRoute = ({ children }) => {
 // Admin-only route
 const AdminRoute = ({ children }) => {
   const { user } = useContext(AuthContext);
-  return user && user.role === 'admin' ? children : <Navigate to="/dashboard" />;
+  return user && user.role === "admin"
+    ? children
+    : <Navigate to="/login" />;
 };
 
 function App() {
@@ -35,9 +37,10 @@ function App() {
     <AuthProvider>
       <Router>
         <Navbar />
+
         <Routes>
           {/* Public Routes */}
-          <Route path="/" element={<Register />} />
+          <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
 
@@ -50,6 +53,7 @@ function App() {
               </ProtectedRoute>
             }
           />
+
           <Route
             path="/alumni"
             element={
@@ -58,6 +62,26 @@ function App() {
               </ProtectedRoute>
             }
           />
+
+          <Route
+            path="/alumni/view/:id"
+            element={
+              <ProtectedRoute>
+                <ViewAlumni />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/alumni/profile/:id"
+            element={
+              <ProtectedRoute>
+                <AlumniProfile />
+              </ProtectedRoute>
+            }
+          />
+
+          {/* Admin Routes */}
           <Route
             path="/alumni/add"
             element={
@@ -66,6 +90,7 @@ function App() {
               </AdminRoute>
             }
           />
+
           <Route
             path="/alumni/edit/:id"
             element={
@@ -74,14 +99,7 @@ function App() {
               </AdminRoute>
             }
           />
-          <Route
-            path="/alumni/:id"
-            element={
-              <ProtectedRoute>
-                <AlumniProfile />
-              </ProtectedRoute>
-            }
-          />
+
           <Route
             path="/admin/users"
             element={
@@ -90,6 +108,7 @@ function App() {
               </AdminRoute>
             }
           />
+
           <Route
             path="/admin/alumni"
             element={

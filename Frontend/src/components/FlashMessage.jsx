@@ -113,7 +113,7 @@ const FlashMessage = ({ message, type = 'success', onClose, duration = 5000 }) =
           
           <div className="p-5 flex items-start space-x-4">
             {/* Icon Container */}
-            <div className={`flex-shrink-0 h-12 w-12 rounded-xl ${getIconBg()} flex items-center justify-center shadow-lg`}>
+            <div className={`shrink-0 h-12 w-12 rounded-xl ${getIconBg()} flex items-center justify-center shadow-lg`}>
               {getIcon()}
             </div>
 
@@ -133,7 +133,7 @@ const FlashMessage = ({ message, type = 'success', onClose, duration = 5000 }) =
             {onClose && (
               <button
                 onClick={onClose}
-                className="flex-shrink-0 h-8 w-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-500 hover:text-gray-700 transition-all duration-200 ml-2 group"
+                className="shrink-0 h-8 w-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-500 hover:text-gray-700 transition-all duration-200 ml-2 group"
                 aria-label="Close message"
               >
                 <FaTimes className="text-sm group-hover:scale-110 transition-transform" />
@@ -142,11 +142,11 @@ const FlashMessage = ({ message, type = 'success', onClose, duration = 5000 }) =
           </div>
 
           {/* Decorative Gradient */}
-          <div className={`absolute -top-10 -right-10 h-20 w-20 rounded-full bg-gradient-to-br ${getGradient()} opacity-10 blur-xl`}></div>
+          <div className={`absolute -top-10 -right-10 h-20 w-20 rounded-full bg-linear-to-br ${getGradient()} opacity-10 blur-xl`}></div>
         </div>
 
         {/* Drop Shadow Effect */}
-        <div className={`absolute inset-0 -z-10 rounded-xl bg-gradient-to-br ${getGradient()} opacity-20 blur-lg`}></div>
+        <div className={`absolute inset-0 -z-10 rounded-xl bg-linear-to-br ${getGradient()} opacity-20 blur-lg`}></div>
       </motion.div>
     </AnimatePresence>
   );

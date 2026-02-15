@@ -27,7 +27,7 @@ const AlumniCard = ({ al }) => {
       <div className="flex flex-col items-center p-6">
 
         {/* Avatar */}
-        <div className="w-28 h-28 bg-gradient-to-tr from-sky-500 to-indigo-500 rounded-full flex items-center justify-center text-3xl text-white font-bold ring-4 ring-white shadow">
+        <div className="w-28 h-28 bg-linear-to-tr from-sky-500 to-indigo-500 rounded-full flex items-center justify-center text-3xl text-white font-bold ring-4 ring-white shadow">
           {al.photoUrl ? (
             <img
               src={al.photoUrl}
