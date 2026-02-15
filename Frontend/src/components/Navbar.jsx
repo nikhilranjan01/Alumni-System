@@ -21,10 +21,10 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
 
-          {/* Logo & Links */}
+          {/* Logo */}
           <div className="flex items-center gap-8">
             <Link
-              to={user ? "/dashboard" : "/login"}
+              to={user ? "/dashboard" : "/"}
               className="text-xl font-extrabold tracking-wide text-sky-400 hover:text-sky-300"
             >
               AlumniMS
@@ -69,6 +69,15 @@ const Navbar = () => {
 
           {/* Right Side */}
           <div className="flex items-center gap-4">
+
+            {/* HOME BUTTON */}
+            <Link
+              to="/"
+              className={`${navLink} ${pathname === "/" && activeLink}`}
+            >
+              Home
+            </Link>
+
             {user ? (
               <>
                 <div className="hidden sm:flex flex-col text-right">
@@ -132,7 +141,17 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="sm:hidden mt-3 rounded-2xl bg-slate-800 shadow-xl p-4 space-y-2 animate-fadeIn">
+          <div className="sm:hidden mt-3 rounded-2xl bg-slate-800 shadow-xl p-4 space-y-2">
+
+            {/* HOME MOBILE */}
+            <Link
+              to="/"
+              onClick={() => setMenuOpen(false)}
+              className="block px-4 py-2 rounded-lg text-slate-300 hover:bg-slate-700 hover:text-white"
+            >
+              Home
+            </Link>
+
             {user ? (
               <>
                 <div className="pb-3 border-b border-slate-700">
@@ -157,7 +176,7 @@ const Navbar = () => {
                     key={item.to}
                     to={item.to}
                     onClick={() => setMenuOpen(false)}
-                    className="block px-4 py-2 rounded-lg text-slate-300 hover:bg-slate-700 hover:text-white transition"
+                    className="block px-4 py-2 rounded-lg text-slate-300 hover:bg-slate-700 hover:text-white"
                   >
                     {item.label}
                   </Link>
@@ -165,7 +184,7 @@ const Navbar = () => {
 
                 <button
                   onClick={logout}
-                  className="w-full text-left px-4 py-2 rounded-lg bg-rose-500 hover:bg-rose-600 text-white transition"
+                  className="w-full text-left px-4 py-2 rounded-lg bg-rose-500 hover:bg-rose-600 text-white"
                 >
                   Logout
                 </button>
