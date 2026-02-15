@@ -11,7 +11,7 @@ const alumniSchema = new mongoose.Schema({
   designation: { type: String, trim: true },
   linkedin: { type: String, trim: true },
   notes: { type: String },
-  role: { type: String, enum: ['student', 'admin'], default: 'student' }
+   role: { type: String, enum: ['admin', 'student', 'alumni'], default: 'student' }
 }, {
   timestamps: true
 });
