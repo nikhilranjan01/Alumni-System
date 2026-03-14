@@ -63,7 +63,7 @@ const AdminAlumni = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+      <div className="min-h-screen bg-linear-to-brr from-gray-50 to-gray-100 flex items-center justify-center">
         <div className="text-center">
           <div className="relative">
             <div className="h-16 w-16 rounded-full border-4 border-gray-200"></div>
@@ -77,13 +77,13 @@ const AdminAlumni = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100">
       {/* Header */}
-      <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white shadow-2xl">
+      <div className="bg-linear-to-br from-gray-900 via-gray-800 to-gray-900 text-white shadow-2xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+              <h1 className="text-3xl md:text-4xl font-bold bg-linear-to-br from-blue-400 to-cyan-300 bg-clip-text text-transparent">
                 Alumni Management
               </h1>
               <p className="mt-2 text-gray-300 max-w-2xl">
@@ -92,7 +92,7 @@ const AdminAlumni = () => {
             </div>
             <Link
               to="/alumni/add"
-              className="mt-4 md:mt-0 inline-flex items-center px-6 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-semibold rounded-xl hover:from-emerald-700 hover:to-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 group"
+              className="mt-4 md:mt-0 inline-flex items-center px-6 py-3 bg-linear-to-br from-emerald-600 to-teal-600 text-white font-semibold rounded-xl hover:from-emerald-700 hover:to-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 group"
             >
               <FaPlus className="mr-3" />
               <span>Add New Alumni</span>
@@ -114,7 +114,7 @@ const AdminAlumni = () => {
             className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200"
           >
             <div className="flex items-center space-x-4">
-              <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center">
+              <div className="h-12 w-12 rounded-xl bg-linear-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center">
                 <FaUsers className="h-6 w-6 text-blue-600" />
               </div>
               <div>
@@ -131,7 +131,7 @@ const AdminAlumni = () => {
             className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200"
           >
             <div className="flex items-center space-x-4">
-              <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-emerald-500/20 to-green-500/20 flex items-center justify-center">
+              <div className="h-12 w-12 rounded-xl bg-linear-to-br from-emerald-500/20 to-green-500/20 flex items-center justify-center">
                 <FaBriefcase className="h-6 w-6 text-emerald-600" />
               </div>
               <div>
@@ -150,7 +150,7 @@ const AdminAlumni = () => {
             className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200"
           >
             <div className="flex items-center space-x-4">
-              <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center">
+              <div className="h-12 w-12 rounded-xl bg-linear-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center">
                 <FaGraduationCap className="h-6 w-6 text-purple-600" />
               </div>
               <div>
@@ -186,7 +186,7 @@ const AdminAlumni = () => {
             animate={{ opacity: 1, scale: 1 }}
             className="text-center py-16 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200"
           >
-            <div className="h-20 w-20 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center mx-auto">
+            <div className="h-20 w-20 rounded-full bg-linear-to-br from-gray-200 to-gray-300 flex items-center justify-center mx-auto">
               <FaUser className="h-10 w-10 text-gray-500" />
             </div>
             <h3 className="mt-6 text-xl font-semibold text-gray-800">No alumni found</h3>
@@ -199,7 +199,7 @@ const AdminAlumni = () => {
               <div className="mt-8">
                 <Link
                   to="/alumni/add"
-                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="inline-flex items-center px-6 py-3 bg-linear-to-br from-blue-600 to-cyan-500 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
                   <FaPlus className="mr-3" />
                   Add First Alumni
@@ -225,7 +225,7 @@ const AdminAlumni = () => {
                 {/* Card Header */}
                 <div className="p-6 pb-4">
                   <div className="flex items-start space-x-4">
-                    <div className="h-14 w-14 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center text-white font-bold text-lg shadow-lg flex-shrink-0">
+                    <div className="h-14 w-14 rounded-xl bg-linear-to-br from-blue-500 to-cyan-400 flex items-center justify-center text-white font-bold text-lg shadow-lg shrink-0">
                       {al.name?.charAt(0).toUpperCase() || 'A'}
                     </div>
                     <div className="flex-1 min-w-0">

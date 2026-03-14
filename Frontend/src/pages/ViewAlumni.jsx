@@ -33,7 +33,7 @@ const ViewAlumni = () => {
     .join("");
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-sky-100 via-indigo-100 to-purple-100 p-6">
+    <div className="min-h-screen bg-linear-to-br from-sky-100 via-indigo-100 to-purple-100 p-6">
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -42,13 +42,13 @@ const ViewAlumni = () => {
       >
 
         {/* Header Gradient */}
-        <div className="h-36 bg-gradient-to-r from-sky-500 via-indigo-500 to-purple-500"></div>
+        <div className="h-36 bg-linear-to-br from-sky-500 via-indigo-500 to-purple-500"></div>
 
         {/* Profile Section */}
         <div className="p-8 -mt-16 flex flex-col items-center">
 
           {/* Avatar */}
-          <div className="w-32 h-32 bg-gradient-to-tr from-sky-500 to-indigo-500 rounded-full flex items-center justify-center text-white text-4xl font-bold ring-4 ring-white shadow-lg">
+          <div className="w-32 h-32 bg-linear-to-br from-sky-500 to-indigo-500 rounded-full flex items-center justify-center text-white text-4xl font-bold ring-4 ring-white shadow-lg">
             {alumni.photoUrl ? (
               <img
                 src={alumni.photoUrl}

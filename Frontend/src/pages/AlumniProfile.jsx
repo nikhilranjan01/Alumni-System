@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { FaEnvelope, FaPhone, FaLinkedin, FaBriefcase, FaGraduationCap, FaUser, FaBuilding, FaMapMarkerAlt, FaIdCard, FaCalendarAlt } from 'react-icons/fa';
 
 const Hero = ({ al }) => (
-  <div className="relative w-full bg-gradient-to-r from-blue-900 via-blue-800 to-cyan-800 py-16 overflow-hidden">
+  <div className="relative w-full bg-linear-to-br from-blue-900 via-blue-800 to-cyan-800 py-16 overflow-hidden">
     {/* Animated background elements */}
     <div className="absolute inset-0 overflow-hidden">
       <div className="absolute -top-32 -right-32 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl"></div>
@@ -20,7 +20,7 @@ const Hero = ({ al }) => (
         className="flex justify-center -mt-24 mb-6"
       >
         <div className="relative">
-          <div className="w-48 h-48 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-full overflow-hidden shadow-2xl border-4 border-white/20 flex items-center justify-center">
+          <div className="w-48 h-48 bg-linear-to-br from-blue-500 to-cyan-400 rounded-full overflow-hidden shadow-2xl border-4 border-white/20 flex items-center justify-center">
             {al.photoUrl ? (
               <img src={al.photoUrl} alt={al.name} className="w-full h-full object-cover" />
             ) : (
@@ -39,7 +39,7 @@ const Hero = ({ al }) => (
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2 }}
-        className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent"
+        className="text-4xl md:text-5xl font-bold bg-linear-to-br from-white to-blue-100 bg-clip-text text-transparent"
       >
         {al.name}
       </motion.h1>
@@ -82,7 +82,7 @@ const GlassCard = ({ title, icon: Icon, children, gradient = "from-blue-500/10 t
     className={`bg-white/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-gray-200/50 hover:shadow-2xl transition-all duration-300`}
   >
     <div className="flex items-center space-x-3 mb-4 pb-3 border-b border-gray-200/50">
-      <div className={`h-10 w-10 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center`}>
+      <div className={`h-10 w-10 rounded-xl bg-linear-to-br ${gradient} flex items-center justify-center`}>
         {Icon && <Icon className="h-5 w-5 text-blue-600" />}
       </div>
       <h3 className="text-xl font-bold text-gray-800">{title}</h3>
@@ -112,7 +112,7 @@ const AlumniProfile = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+      <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 flex items-center justify-center">
         <div className="text-center">
           <div className="relative">
             <div className="h-16 w-16 rounded-full border-4 border-gray-200"></div>
@@ -127,7 +127,7 @@ const AlumniProfile = () => {
   if (!al) return null;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-gray-100 pb-16">
+    <div className="min-h-screen bg-linear-to-br from-gray-50 via-blue-50/30 to-gray-100 pb-16">
       <Hero al={al} />
 
       <main className="max-w-6xl mx-auto -mt-12 px-4 grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -297,7 +297,7 @@ const AlumniProfile = () => {
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full py-3.5 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 group"
+            className="w-full py-3.5 bg-linear-to-br from-blue-600 to-cyan-500 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 group"
           >
             <svg className="h-5 w-5 group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />

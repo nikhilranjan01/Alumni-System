@@ -30,14 +30,6 @@ const Navbar = () => {
               AlumniMS
             </Link>
 
-            {/* HOME BUTTON */}
-            <Link
-              to="/"
-              className={`${navLink} ${pathname === "/" && activeLink}`}
-            >
-              Home
-            </Link>
-
             {user && (
               <div className="hidden sm:flex items-center gap-6">
                 <Link
@@ -106,21 +98,29 @@ const Navbar = () => {
                 </button>
               </>
             ) : (
-              <>
-                <Link
-                  to="/login"
-                  className="px-4 py-1.5 rounded-full text-sm text-slate-300 hover:text-white hover:bg-slate-800 transition"
-                >
-                  Login
-                </Link>
-                <Link
-                  to="/register"
-                  className="px-4 py-1.5 rounded-full text-sm bg-sky-500 hover:bg-sky-600 text-white font-medium transition"
-                >
-                  Register
-                </Link>
-              </>
-            )}
+  <>
+    <Link
+      to="/"
+      className={`${navLink} ${pathname === "/" && activeLink}`}
+    >
+      Home
+    </Link>
+
+    <Link
+      to="/login"
+      className="px-4 py-1.5 rounded-full text-sm text-slate-300 hover:text-white hover:bg-slate-800 transition"
+    >
+      Login
+    </Link>
+
+    <Link
+      to="/register"
+      className="px-4 py-1.5 rounded-full text-sm bg-sky-500 hover:bg-sky-600 text-white font-medium transition"
+    >
+      Register
+    </Link>
+  </>
+)}
 
             {/* Mobile Toggle */}
             <button

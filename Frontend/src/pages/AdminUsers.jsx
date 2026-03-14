@@ -113,7 +113,7 @@ const AdminUsers = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+      <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 flex items-center justify-center">
         <div className="text-center">
           <div className="relative">
             <div className="h-16 w-16 rounded-full border-4 border-gray-200"></div>
@@ -145,11 +145,11 @@ const AdminUsers = () => {
   const getUserCount = (role) => users.filter(u => u.role === role).length;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-4 md:p-6">
+    <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+          <h1 className="text-3xl md:text-4xl font-bold bg-linear-to-br from-gray-800 to-gray-600 bg-clip-text text-transparent">
             User Management
           </h1>
           <p className="text-gray-600 mt-2">Manage user accounts, roles, and permissions across the platform</p>
@@ -164,7 +164,7 @@ const AdminUsers = () => {
             className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200"
           >
             <div className="flex items-center space-x-4">
-              <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center">
+              <div className="h-12 w-12 rounded-xl bg-linear-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center">
                 <FaUsers className="h-6 w-6 text-blue-600" />
               </div>
               <div>
@@ -181,7 +181,7 @@ const AdminUsers = () => {
             className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200"
           >
             <div className="flex items-center space-x-4">
-              <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center">
+              <div className="h-12 w-12 rounded-xl bg-linear-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center">
                 <FaUserShield className="h-6 w-6 text-purple-600" />
               </div>
               <div>
@@ -198,7 +198,7 @@ const AdminUsers = () => {
             className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200"
           >
             <div className="flex items-center space-x-4">
-              <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-emerald-500/20 to-green-500/20 flex items-center justify-center">
+              <div className="h-12 w-12 rounded-xl bg-linear-to-br from-emerald-500/20 to-green-500/20 flex items-center justify-center">
                 <FaUserGraduate className="h-6 w-6 text-emerald-600" />
               </div>
               <div>
@@ -215,7 +215,7 @@ const AdminUsers = () => {
             className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200"
           >
             <div className="flex items-center space-x-4">
-              <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center">
+              <div className="h-12 w-12 rounded-xl bg-linear-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center">
                 <FaFilter className="h-6 w-6 text-amber-600" />
               </div>
               <div>
@@ -280,7 +280,7 @@ const AdminUsers = () => {
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-6 p-4 bg-gradient-to-r from-red-50 to-rose-50 border border-red-200 rounded-xl flex items-center space-x-3"
+            className="mb-6 p-4 bg-linear-to-br from-red-50 to-rose-50 border border-red-200 rounded-xl flex items-center space-x-3"
           >
             <div className="h-8 w-8 rounded-full bg-red-500 flex items-center justify-center">
               <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -294,7 +294,7 @@ const AdminUsers = () => {
         {/* Users Table */}
         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
           {/* Table Header */}
-          <div className="px-6 py-4 bg-gradient-to-r from-gray-800 to-gray-900 text-white">
+          <div className="px-6 py-4 bg-linear-to-br from-gray-800 to-gray-900 text-white">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-3">
                 <FaIdBadge className="h-5 w-5" />
@@ -332,7 +332,7 @@ const AdminUsers = () => {
                 {filteredUsers.length === 0 ? (
                   <tr>
                     <td colSpan="5" className="px-6 py-12 text-center">
-                      <div className="h-20 w-20 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center mx-auto">
+                      <div className="h-20 w-20 rounded-full bg-linear-to-br from-gray-200 to-gray-300 flex items-center justify-center mx-auto">
                         <FaUser className="h-10 w-10 text-gray-500" />
                       </div>
                       <h3 className="mt-6 text-lg font-semibold text-gray-800">No users found</h3>
@@ -351,7 +351,7 @@ const AdminUsers = () => {
                       {/* User Profile */}
                       <td className="px-6 py-4">
                         <div className="flex items-center space-x-4">
-                          <div className={`h-10 w-10 rounded-xl bg-gradient-to-br ${getRoleColor(u.role)} flex items-center justify-center text-white font-bold shadow-md`}>
+                          <div className={`h-10 w-10 rounded-xl bg-linear-to-br ${getRoleColor(u.role)} flex items-center justify-center text-white font-bold shadow-md`}>
                             {u.name?.charAt(0).toUpperCase() || 'U'}
                           </div>
                           <div>
@@ -365,7 +365,7 @@ const AdminUsers = () => {
                       <td className="px-6 py-4">
                         <div className="space-y-1">
                           <div className="flex items-center text-sm text-gray-600">
-                            <FaEnvelope className="h-3.5 w-3.5 text-gray-400 mr-2 flex-shrink-0" />
+                            <FaEnvelope className="h-3.5 w-3.5 text-gray-400 mr-2 shrink-0" />
                             <span className="truncate max-w-xs">{u.email}</span>
                           </div>
                         </div>
@@ -374,7 +374,7 @@ const AdminUsers = () => {
                       {/* Role */}
                       <td className="px-6 py-4">
                         <div className="flex items-center space-x-2">
-                          <div className={`px-3 py-1.5 rounded-full bg-gradient-to-r ${getRoleColor(u.role)}/10 border border-transparent`}>
+                          <div className={`px-3 py-1.5 rounded-full bg-linear-to-br ${getRoleColor(u.role)}/10 border border-transparent`}>
                             <div className="flex items-center space-x-1.5">
                               {getRoleIcon(u.role)}
                               <span className="text-sm font-medium capitalize">{u.role}</span>
@@ -397,23 +397,23 @@ const AdminUsers = () => {
                           {u.role !== 'admin' ? (
                             <button
                               onClick={() => changeRole(u._id, 'admin')}
-                              className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all duration-200 shadow hover:shadow-lg group min-w-[120px]"
+                              className="inline-flex items-center px-4 py-2 bg-linear-to-br from-purple-500 to-pink-500 text-white font-medium rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all duration-200 shadow hover:shadow-lg group min-w-[120px]"
                             >
-                              <FaArrowUp className="mr-2 h-3.5 w-3.5 group-hover:translate-y-[-2px] transition-transform" />
+                              <FaArrowUp className="mr-2 h-3.5 w-3.5 group-hover:translate-y-0.5 transition-transform" />
                               Promote
                             </button>
                           ) : (
                             <button
                               onClick={() => changeRole(u._id, 'student')}
-                              className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-medium rounded-xl hover:from-amber-600 hover:to-orange-600 transition-all duration-200 shadow hover:shadow-lg group min-w-[120px]"
+                              className="inline-flex items-center px-4 py-2 bg-linear-to-br from-amber-500 to-orange-500 text-white font-medium rounded-xl hover:from-amber-600 hover:to-orange-600 transition-all duration-200 shadow hover:shadow-lg group min-w-[120px]"
                             >
-                              <FaArrowDown className="mr-2 h-3.5 w-3.5 group-hover:translate-y-[2px] transition-transform" />
+                              <FaArrowDown className="mr-2 h-3.5 w-3.5 ggroup-hover:translate-y-0.5 transition-transform" />
                               Demote
                             </button>
                           )}
                           <button
                             onClick={() => removeUser(u._id)}
-                            className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-red-500 to-rose-500 text-white font-medium rounded-xl hover:from-red-600 hover:to-rose-600 transition-all duration-200 shadow hover:shadow-lg group"
+                            className="inline-flex items-center px-4 py-2 bg-linear-to-br from-red-500 to-rose-500 text-white font-medium rounded-xl hover:from-red-600 hover:to-rose-600 transition-all duration-200 shadow hover:shadow-lg group"
                           >
                             <FaTrash className="mr-2 h-3.5 w-3.5 group-hover:scale-110 transition-transform" />
                             Delete
@@ -453,7 +453,7 @@ const AdminUsers = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl border border-blue-200 shadow-lg"
+          className="mt-8 p-6 bg-linear-to-br from-blue-50 to-cyan-50 rounded-2xl border border-blue-200 shadow-lg"
         >
           <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
             <FaUserShield className="h-5 w-5 text-blue-600 mr-2" />

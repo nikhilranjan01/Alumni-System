@@ -64,13 +64,13 @@ const AlumniList = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-gray-100 p-4 md:p-6">
+    <div className="min-h-screen bg-linear-to-br from-gray-50 via-blue-50/30 to-gray-100 p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="mb-8 md:mb-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+              <h1 className="text-3xl md:text-4xl font-bold bg-linear-to-br from-gray-800 to-gray-600 bg-clip-text text-transparent">
                 Alumni Directory
               </h1>
               <p className="text-gray-600 mt-2">Connect with your alumni community</p>
@@ -237,7 +237,7 @@ const AlumniList = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 className="text-center py-16 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-gray-200"
               >
-                <div className="h-20 w-20 rounded-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center mx-auto">
+                <div className="h-20 w-20 rounded-full bg-linear-to-br from-gray-200 to-gray-300 flex items-center justify-center mx-auto">
                   <FaUsers className="h-10 w-10 text-gray-500" />
                 </div>
                 <h3 className="mt-6 text-xl font-semibold text-gray-800">No alumni found</h3>
@@ -249,7 +249,7 @@ const AlumniList = () => {
                 {(query || branch || year) && (
                   <button
                     onClick={resetFilters}
-                    className="mt-6 px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+                    className="mt-6 px-6 py-3 bg-linear-to-br from-blue-600 to-cyan-500 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 shadow-lg hover:shadow-xl"
                   >
                     Clear All Filters
                   </button>
