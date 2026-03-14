@@ -30,35 +30,52 @@ const Navbar = () => {
               AlumniMS
             </Link>
 
+            {/* HOME BUTTON */}
+            <Link
+              to="/"
+              className={`${navLink} ${pathname === "/" && activeLink}`}
+            >
+              Home
+            </Link>
+
             {user && (
               <div className="hidden sm:flex items-center gap-6">
                 <Link
                   to="/dashboard"
-                  className={`${navLink} ${
-                    pathname === "/dashboard" && activeLink
-                  }`}
+                  className={`${navLink} ${pathname === "/dashboard" && activeLink
+                    }`}
                 >
                   Dashboard
                 </Link>
 
                 <Link
                   to="/alumni"
-                  className={`${navLink} ${
-                    pathname === "/alumni" && activeLink
-                  }`}
+                  className={`${navLink} ${pathname === "/alumni" && activeLink
+                    }`}
                 >
                   Alumni
                 </Link>
 
                 {user.role === "admin" && (
                   <>
-                    <Link to="/alumni/add" className={navLink}>
+                    <Link
+                      to="/alumni/add"
+                      className={`${navLink} ${pathname === "/alumni/add" && activeLink}`}
+                    >
                       Add Alumni
                     </Link>
-                    <Link to="/admin/alumni" className={navLink}>
+
+                    <Link
+                      to="/admin/alumni"
+                      className={`${navLink} ${pathname === "/admin/alumni" && activeLink}`}
+                    >
                       Manage Alumni
                     </Link>
-                    <Link to="/admin/users" className={navLink}>
+
+                    <Link
+                      to="/admin/users"
+                      className={`${navLink} ${pathname === "/admin/users" && activeLink}`}
+                    >
                       Users
                     </Link>
                   </>
@@ -69,14 +86,6 @@ const Navbar = () => {
 
           {/* Right Side */}
           <div className="flex items-center gap-4">
-
-            {/* HOME BUTTON */}
-            <Link
-              to="/"
-              className={`${navLink} ${pathname === "/" && activeLink}`}
-            >
-              Home
-            </Link>
 
             {user ? (
               <>
@@ -166,10 +175,10 @@ const Navbar = () => {
                   { to: "/alumni", label: "Alumni List" },
                   ...(user.role === "admin"
                     ? [
-                        { to: "/alumni/add", label: "Add Alumni" },
-                        { to: "/admin/alumni", label: "Manage Alumni" },
-                        { to: "/admin/users", label: "Manage Users" },
-                      ]
+                      { to: "/alumni/add", label: "Add Alumni" },
+                      { to: "/admin/alumni", label: "Manage Alumni" },
+                      { to: "/admin/users", label: "Manage Users" },
+                    ]
                     : []),
                 ].map((item) => (
                   <Link

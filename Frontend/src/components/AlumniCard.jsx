@@ -70,7 +70,7 @@ const AlumniCard = ({ al }) => {
         {/* Button */}
         <div className="mt-5 w-full flex justify-center">
           <Link
-            to={`/alumni/${al._id}`}
+            to={`/alumni/view/${al._id}`}
             className="inline-flex items-center justify-center px-5 py-2 bg-sky-500 hover:bg-sky-600 text-white rounded-xl shadow-sm hover:shadow-md transition font-medium"
           >
             View Profile
