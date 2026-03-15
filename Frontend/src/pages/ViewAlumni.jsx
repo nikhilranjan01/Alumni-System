@@ -152,14 +152,14 @@ const ViewAlumni = () => {
               Back
             </Link>
 
-            {alumni.email && (
+            {/* {alumni.email && (
               <a
                 href={`mailto:${alumni.email}`}
                 className="px-6 py-2 bg-sky-500 text-white rounded-xl hover:bg-sky-600 transition"
               >
                 Contact
               </a>
-            )}
+            )} */}
           </div>
 
         </div>
